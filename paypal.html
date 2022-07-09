@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+          <!-- Required meta tags -->
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <!-- Bootstrap CSS -->
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+          <link rel="stylesheet" href="style.css" />
+          <title>Icon Flavor</title>
+
+</head>
+
+
+<body>
+    <div class="jumbotron" >
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 text-center">
+                <a href="index.html"> Go back to the shop</a>
+        <h3>You will be re-directed to Paypal where you can login and complete the transaction</h3>
+        <input type="hidden" name="cmd" value="_ext-enter">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="POST">
+           <input type="hidden" name="cmd" value="_xclick">
+           <input type="hidden" name="business" value="kauress8@gmail.com">
+           <input type="hidden" name="item_name" value="Item Name">
+           <input type="hidden" name="currency_code" value="USD">
+         <input type="hidden"  id = "hidden-input" name="amount" value="">  
+           <input type="image" src="https://www.paypalobjects.com/webstatic/mktg/merchant_portal/button/buynow.en.png" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" style="width:180px;" >
+        </form>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+
+
+    <script src="cart.js"></script>
+      <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script>
+        let paypalTotal = sessionStorage.getItem('paypalTotal');
+        console.log(JSON.parse(paypalTotal));
+        document.getElementById("hidden-input").value = paypalTotal
+            </script>
+</body>
+
+</html>
+
+
+  
